@@ -18,6 +18,17 @@ Shader::Shader(const wchar_t* vertexShaderPath, const wchar_t* pixelShaderPath, 
 	CreatePixelShader(pDevice);
 }
 
+Shader::Shader(const wchar_t* vertexShaderPath, const wchar_t* pixelShaderPath, Graphics* g)
+{
+	D3DReadFileToBlob(vertexShaderPath, &pVertexBlob);
+	D3DReadFileToBlob(pixelShaderPath, &pPixelBlob);
+	this->LayoutBlob = this->pVertexBlob;
+	g->pDevice->CreateVertexShader(pVertexBlob->GetBufferPointer(), pVertexBlob->GetBufferSize(), nullptr, &pVertexShader);
+	g->pDevice->CreatePixelShader(pPixelBlob->GetBufferPointer(), pPixelBlob->GetBufferSize(), nullptr, &pPixelShader);
+	g->pContext->VSSetShader(pVertexShader, nullptr, 0u);
+	g->pContext->PSSetShader(pPixelShader, nullptr, 0u);
+}
+
 void Shader::LoadVertexShader(const wchar_t* vertexShaderPath)
 {
 	D3DReadFileToBlob(vertexShaderPath, &pVertexBlob);

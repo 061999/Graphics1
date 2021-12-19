@@ -27,7 +27,9 @@ ModelData::ModelData(string path)
 	if (file.is_open())
 	{
 		cout << "文件打开成功" << endl;
-		
+	}
+	else {
+		cout << "文件打开失败" << endl;
 	}
 	
 	file.read((char*)&vertexsize, sizeof(int));

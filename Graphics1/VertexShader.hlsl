@@ -1,14 +1,14 @@
 struct vsout
 {
-    float3 color : Color;
+    float4 color : Colors;
     float4 pos : SV_Position;
 
 };
 
-vsout main(float2 pos : Position,float3 color:Color)
+vsout main(float3 pos : Position,float2 color:Color)
 {
     vsout vso;
-    vso.color = color;
-    vso.pos = float4(pos.x, pos.y, 0.0f, 1.0f);
+    vso.color = float4(color,1.0f,1.0f);
+    vso.pos = float4(pos.x, pos.y, pos.z, 1.0f);
     return vso;
 }

@@ -30,6 +30,18 @@
     <ClCompile Include="MyTimer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Single.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InputLayout.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics.h">
@@ -42,6 +54,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MyTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Single.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InputLayout.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

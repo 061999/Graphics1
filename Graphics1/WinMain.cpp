@@ -1,5 +1,5 @@
 #include <Windows.h>
-#include "Graphics.h"
+#include "Single.h"
 #include "MyTimer.h"
 
 LRESULT CALLBACK WndPorc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -28,7 +28,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpComLi
 	RegisterClassEx(&wc);
 
 	HWND hWnd = CreateWindowEx(0, pClassName, "Happy Hard Window", WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU, 200, 200, 640, 480, nullptr, nullptr, hInstance, nullptr);
-	Graphics* gfx=new Graphics(hWnd);
+	Single* single = new Single(hWnd);
 	MyTimer t;
 
 	ShowWindow(hWnd, SW_SHOW);
@@ -41,10 +41,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpComLi
 			DispatchMessage(&msg);
 		}
 		else {
-			
-			gfx->ClearBuffer(cos(t.Peek()), 0.5f, sin(t.Peek()));
-			gfx->DrawTriang();
-			gfx->EndFrame();
+			single->draw(cos(t.Peek()), 0.5f, sin(t.Peek()));
 		}
 		if (msg.message==WM_QUIT)
 		{

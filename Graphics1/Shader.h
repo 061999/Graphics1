@@ -1,12 +1,14 @@
 #pragma once
 #include <d3d11.h>
 #include <d3dcompiler.h>
+#include "Graphics.h"
 class Shader
 {
 public:
 	Shader();
 	Shader(const wchar_t* vertexShaderPath, const wchar_t* pixelShaderPath);
 	Shader(const wchar_t* vertexShaderPath, const wchar_t* pixelShaderPath, ID3D11Device* pDevice);
+	Shader(const wchar_t* vertexShaderPath, const wchar_t* pixelShaderPath, Graphics* g);
 	void LoadVertexShader(const wchar_t* vertexShaderPath);
 	void LoadPixelShader(const wchar_t* pixelShaderPath);
 	void CreateVertexShader(ID3D11Device* pDevice);
